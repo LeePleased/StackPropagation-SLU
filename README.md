@@ -38,4 +38,4 @@ Similarly, for SNIPS dataset, you can also consider the following command:
 
         python trian.py -wed 32 -ehd 256 -aod 128
         
-If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
+If any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
