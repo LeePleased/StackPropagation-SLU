@@ -30,4 +30,12 @@ We highly suggest you using [Anaconda](https://www.anaconda.com) to manage your 
 ## Running Code
 
 The script **train.py** acts as a main function to the project. For reproducing the results reported in our
-paper.
+paper, We recommand you the following hyper-parameter setting for ATIS dataset:
+
+        python trian.py -wed 256 -ehd 256 -aod 128 
+
+Similarly, for SNIPS dataset, you can also consider the following command: 
+
+        python trian.py -wed 32 -ehd 256 -aod 128
+        
+If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
