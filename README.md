@@ -37,5 +37,5 @@ paper, We recommand you the following hyper-parameter setting for ATIS dataset:
 Similarly, for SNIPS dataset, you can also consider the following command: 
 
         python trian.py -wed 32 -ehd 256 -aod 128
-        
-If any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
+
+Due to some stochastic factors, It's necessary to sightly tune the hyper-parameters using grid search. If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
