@@ -3,7 +3,7 @@
 This repository contains the PyTorch implementation of the paper: **A Stack-Propagation Framework with 
 Token-Level Intent Detection for Spoken Language Understanding**. If you use any source codes or the datasets included in this toolkit in your 
 
-<div align=center><img src="https://github.com/LeePleased/StackPropagation-SLU/blob/master/image/0.png" width="300" height="450" /></div>
+<div align=center><img src="https://github.com/LeePleased/StackPropagation-SLU/blob/master/image/0.png" /></div>
 
 work, please cite the following paper. The bibtex are listed below:
 
