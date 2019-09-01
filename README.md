@@ -24,3 +24,10 @@ Our code is based on PyTorch 1.1 and runnable for both windows and ubuntu server
 > + scipy==1.2.1
 > + torch==1.1.0
 > + ordered-set==3.1.1
+
+We highly suggest you using [Anaconda](https://www.anaconda.com) to manage your python environment.
+
+## Running Code
+
+The script **train.py** acts as a main function to the project. For reproducing the results reported in our
+paper.
