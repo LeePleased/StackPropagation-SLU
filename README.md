@@ -27,7 +27,7 @@ Our code is based on PyTorch 1.1 and runnable for both windows and ubuntu server
 
 We highly suggest you using [Anaconda](https://www.anaconda.com) to manage your python environment.
 
-## How to Run It
+## How to Run it
 
 The script **train.py** acts as a main function to the project. For reproducing the results reported in our
 paper, We recommand you the following hyper-parameter setting for ATIS dataset:
