@@ -34,7 +34,7 @@ We highly suggest you using [Anaconda](https://www.anaconda.com) to manage your 
 ## How to Run it
 
 The script **train.py** acts as a main function to the project. For reproducing the results reported in our
-paper, We recommand you the following hyper-parameter setting for ATIS dataset:
+paper, We suggest you the following hyper-parameter setting for ATIS dataset:
 
         python trian.py -wed 256 -ehd 256 -aod 128 
 
