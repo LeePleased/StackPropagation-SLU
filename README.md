@@ -1,11 +1,7 @@
 # A Stack-Propagation Framework with Token-Level Intent Detection for Spoken Language Understanding
 
 This repository contains the PyTorch implementation of the paper: **A Stack-Propagation Framework with 
-Token-Level Intent Detection for Spoken Language Understanding**. If you use any source codes or the datasets included in this toolkit in your 
-
-<div align=center><img src="https://github.com/LeePleased/StackPropagation-SLU/blob/master/image/0.png" /></div>
-
-work, please cite the following paper. The bibtex are listed below:
+Token-Level Intent Detection for Spoken Language Understanding**. If you use any source codes or the datasets included in this toolkit in your work, please cite the following paper. The bibtex are listed below:
 
 <pre>
 @inproceedings{qin2019stack,
@@ -17,6 +13,11 @@ work, please cite the following paper. The bibtex are listed below:
 </pre>
 
 In the following, we will guide you how to use this repository step by step.
+
+## Architecture
+
+<div align=center><img src="https://github.com/LeePleased/StackPropagation-SLU/blob/master/image/0.png" 
+                   width="400" height="400" /></div>
 
 ## Preparation
 
@@ -41,4 +42,4 @@ Similarly, for SNIPS dataset, you can also consider the following command:
 
         python trian.py -wed 32 -ehd 256 -aod 128
 
-Due to some stochastic factors, It's necessary to sightly tune the hyper-parameters using grid search. If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
+Due to some stochastic factors, It's necessary to slightly tune the hyper-parameters using grid search. If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
