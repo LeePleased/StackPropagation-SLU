@@ -4,10 +4,10 @@ This repository contains the PyTorch implementation of the paper: **A Stack-Prop
 Token-Level Intent Detection for Spoken Language Understanding**. If you use any source codes or the datasets included in this toolkit in your work, please cite the following paper. The bibtex are listed below:
 
 <pre>
-@inproceedings{qin2019stack,
+@article{qin2019stack,
   title={A Stack-Propagation Framework with Token-Level Intent Detection for Spoken Language Understanding},
-  author={Libo Qin, Wanxiang Che, Yangming Li, Haoyang Wen, Ting Liu},
-  booktitle={Proceedings of the Empirical Method for Natural Language Understanding (EMNLP)},
+  author={Qin, Libo and Che, Wanxiang and Li, Yangming and Wen, Haoyang and Liu, Ting},
+  journal={arXiv preprint arXiv:1909.02188},
   year={2019}
 }
 </pre>
