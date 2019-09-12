@@ -36,10 +36,10 @@ We highly suggest you using [Anaconda](https://www.anaconda.com) to manage your 
 The script **train.py** acts as a main function to the project. For reproducing the results reported in our
 paper, We suggest you the following hyper-parameter setting for ATIS dataset:
 
-        python train.py -wed 256 -ehd 256 -aod 128 
+        python trian.py -wed 256 -ehd 256 -aod 128 
 
 Similarly, for SNIPS dataset, you can also consider the following command: 
 
-        python train.py -wed 32 -ehd 256 -aod 128
+        python trian.py -wed 32 -ehd 256 -aod 128
 
-Due to some stochastic factors, It's necessary to slightly tune the hyper-parameters using grid search. If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn) and we will reply you soon.
+Due to some stochastic factors, It's necessary to slightly tune the hyper-parameters using grid search. If you have any question, please issue the project or email [me](yangmingli@ir.hit.edu.cn), we will reply you soon.
