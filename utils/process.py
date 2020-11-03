@@ -57,7 +57,7 @@ class Processor(object):
             self.__model.train()
 
             for text_batch, slot_batch, intent_batch in tqdm(dataloader, ncols=50):
-                padded_text, [sorted_slot, sorted_intent], seq_lens = self.__dataset.add_padding(
+                padded_text, [sorted_slot, sorted_intent], seq_lens, _ = self.__dataset.add_padding(
                     text_batch, [(slot_batch, False), (intent_batch, False)]
                 )
                 sorted_intent = [item * num for item, num in zip(sorted_intent, seq_lens)]
@@ -228,10 +228,21 @@ class Processor(object):
         pred_intent, real_intent = [], []
 
         for text_batch, slot_batch, intent_batch in tqdm(dataloader, ncols=50):
-            padded_text, [sorted_slot, sorted_intent], seq_lens = dataset.add_padding(
+            padded_text, [sorted_slot, sorted_intent], seq_lens, sorted_index = dataset.add_padding(
                 text_batch, [(slot_batch, False), (intent_batch, False)], digital=False
             )
-
+            # Because it's a visualization bug, in valid time, it doesn't matter
+            # Only in test time will it need to restore
+            if mode == 'test':
+                tmp_r_slot = [[] for _ in range(len(sorted_index))]
+                for i in range(len(sorted_index)):
+                    tmp_r_slot[sorted_index[i]] = sorted_slot[i]
+                sorted_slot = tmp_r_slot
+                tmp_intent = [[] for _ in range(len(sorted_index))]
+                for i in range(len(sorted_index)):
+                    tmp_intent[sorted_index[i]] = sorted_intent[i]
+                sorted_intent = tmp_intent
+            
             real_slot.extend(sorted_slot)
             real_intent.extend(list(Evaluator.expand_list(sorted_intent)))
 
@@ -243,8 +254,22 @@ class Processor(object):
 
             slot_idx, intent_idx = model(var_text, seq_lens, n_predicts=1)
             nested_slot = Evaluator.nested_list([list(Evaluator.expand_list(slot_idx))], seq_lens)[0]
+            
+            if mode == 'test':
+                tmp_r_slot = [[] for _ in range(len(sorted_index))]
+                for i in range(len(sorted_index)):
+                    tmp_r_slot[sorted_index[i]] = nested_slot[i]
+                nested_slot = tmp_r_slot
+            
             pred_slot.extend(dataset.slot_alphabet.get_instance(nested_slot))
             nested_intent = Evaluator.nested_list([list(Evaluator.expand_list(intent_idx))], seq_lens)[0]
+            
+            if mode == 'test':
+                tmp_intent = [[] for _ in range(len(sorted_index))]
+                for i in range(len(sorted_index)):
+                    tmp_intent[sorted_index[i]] = nested_intent[i]
+                nested_intent = tmp_intent
+            
             pred_intent.extend(dataset.intent_alphabet.get_instance(nested_intent))
 
         exp_pred_intent = Evaluator.max_freq_predict(pred_intent)
