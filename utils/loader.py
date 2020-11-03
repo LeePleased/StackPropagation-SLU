@@ -392,9 +392,9 @@ class DatasetManager(object):
                             item[-1].extend(['<PAD>'] * (max_len - len_list[index]))
 
         if items is not None:
-            return trans_texts, trans_items, seq_lens
+            return trans_texts, trans_items, seq_lens, sorted_index
         else:
-            return trans_texts, seq_lens
+            return trans_texts, seq_lens, sorted_index
 
     @staticmethod
     def __collate_fn(batch):
